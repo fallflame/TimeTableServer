@@ -25,6 +25,7 @@ var Course = db.mongoose.model('Course', CourseSchema);
 exports.getAllCourses = function (callback){
 	Course
 	.find({})
+	.select('_id title number subject')
 	.exec(function(err, docs){
 		callback(err, docs);
 	});
