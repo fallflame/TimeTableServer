@@ -33,8 +33,8 @@ exports.getAllCourses = function (callback){
 }
 
 exports.getCourseById = function (id, callback){
-	Course.findById(id, function(err, data){
-		callback(data);
+	Course.findById(id, function(err, docs){
+		callback(err, docs);
 	});
 }
 
@@ -43,8 +43,8 @@ exports.addNewCourse = function (newCourse, callback) {
 	var instance
 	instance = new Course(newCourse);
 
-	instance.save(function(err, doc){
-		callback(err, doc);
+	instance.save(function(err, docs){
+		callback(err, docs);
 	});
 }
 
