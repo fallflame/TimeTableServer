@@ -3,6 +3,7 @@ exports.data = [
 		title : "Informatique Mobile",
 		number : "8405",
 		subject : "INF",
+		location : "2900 Boulevard Edouard-Montpetit, Montréal, QC H3T 1J4, Canada",
 		courseDescription : " Informatique mobile et réseaux sans fil. Disponibilité ou présence en tout lieu et en tout temps.",
 		events : [
 			{
@@ -30,6 +31,7 @@ exports.data = [
 		title : "Architecture logicielle et conception avancée",
 		number : "8430",
 		subject : "LOG",
+		location : "2900 Boulevard Edouard-Montpetit, Montréal, QC H3T 1J4, Canada",
 		courseDescription : "Méthodes de conception avancées de logiciels et choix d'architecture.",
 		events : [
 			{

@@ -14,6 +14,7 @@ var CourseSchema = new db.Schema({
 	title 		: {type: String, required: true},
 	number		: String,
 	subject		: String,
+	location	: String,
 	courseDescription : String,
 	updatedAt 	: { type : Date, default : Date.now},
 	events 	: [EventSchema]
