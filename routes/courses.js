@@ -15,7 +15,7 @@ router.get('/', function(req, res){
 })
 
 router.get('/:id', function(req, res){
-	Course.getCourseById(function(err, docs){
+	Course.getCourseById(req.params.id,function(err, docs){
 		if(err){
 			res.json({err: "Cannot get course"});
 		} else {
