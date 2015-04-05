@@ -1,9 +1,28 @@
 #!/usr/bin/env node
 var debug = require('debug')('TimeTableServer');
 var app = require('../app');
+var socketIO = require('socket.io');
 
 app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
+});
+
+var io = socketIO.listen(server);
+
+io.on('connection', function(client){
+
+	console.log("connection!");
+
+	client.on('join', function(data){
+		client.set('name', data);
+	});
+
+	client.on('message', function(data){
+		client.get('name', function(err, name){
+			client.broadcast.emit('message', {message: data, name: name});
+		})
+	});
+    
 });
