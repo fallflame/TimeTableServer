@@ -14,7 +14,7 @@ router.get('/', function(req, res){
 	})
 })
 
-
+/*
 router.get('/populate', function(req, res) {
 
 	var demoCourses = require('../models/demoCourses').data;
@@ -29,6 +29,6 @@ router.get('/populate', function(req, res) {
 	res.end("Populated");
 
 });
-
+*/
 
 module.exports = router;
