@@ -32,6 +32,12 @@ exports.getAllCourses = function (callback){
 	});
 }
 
+exports.getCourseById = function (id, callback){
+	Course.findById(id, function(err, data){
+		callback(data);
+	});
+}
+
 exports.addNewCourse = function (newCourse, callback) {
 
 	var instance
