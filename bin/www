@@ -12,17 +12,17 @@ var server = app.listen(app.get('port'), function() {
 var io = socketIO.listen(server);
 
 io.on('connection', function(client){
-
 	console.log("connection!");
 
-	client.on('join', function(data){
-		client.set('name', data);
+	client.on('message', function(data){
+		
+		io.emit('message', data);
+		console.log(data);
 	});
 
-	client.on('message', function(data){
-		client.get('name', function(err, name){
-			client.broadcast.emit('message', {message: data, name: name});
-		})
-	});
+	client.on('disconnect', function(data){
+		console.log("disconnect!");
+		client.disconnect();
+	})
     
 });
